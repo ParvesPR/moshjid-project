@@ -6,16 +6,16 @@ import logo from '../../../assests/images/logo.png';
 const NavBar = () => {
   const menuItems = <>
     <li><Link to="/">Home</Link></li>
-    <li><Link to="/parts">Parts</Link></li>
-    <li><Link to="/business">Business Summary</Link></li>
-    <li><Link to="/reviews">Reviews</Link></li>
-    <li><Link to="/blogs">Blogs</Link></li>
+    <li><Link to="/parts">About Us</Link></li>
+    <li><Link to="/business">Blog</Link></li>
+    <li><Link to="/reviews">Notice</Link></li>
+    <li><Link to="/blogs">Users</Link></li>
   </>
   return (
-    <header>
+    <header className='w-3/4 mx-auto relative'>
 
-      <nav className="navbar mt-10 relative bg-[#c4c4c499] w-3/4 mx-auto rounded-2xl">
-        <div className="navbar-start flex">
+      <nav className="navbar absolute z-10 mt-24 bg-[#c4c4c4ce] rounded-2xl">
+        <div className="navbar-start relative flex">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -25,7 +25,7 @@ const NavBar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">
-            <img src={logo} className='absolute left-8 top-[-20px] w-20' alt="" />
+            <img src={logo} className='absolute ml-10 left-8 top-[-35px] w-[90px] h-[90px]' alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
