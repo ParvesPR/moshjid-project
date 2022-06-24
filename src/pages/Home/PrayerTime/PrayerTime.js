@@ -8,6 +8,7 @@ const PrayerTime = () => {
                 <h1 className='text-5xl p-10 font -bold'>Prayer Times</h1>
             </div>
             <div>
+                <img src={prayerBanner} alt="" />
             </div>
         </section>
     );
