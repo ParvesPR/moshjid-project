@@ -1,10 +1,11 @@
 import React from 'react'
 import underline from '../../../assests/images/underline.png';
 import image1 from '../../../assests/images/image1.png';
+import './Committee.css';
 
 const Committee = () => {
     return (
-        <section className='mt-6'>
+        <section className='mt-6 committee-section py-3'>
             <h2 className='text-center uppercase font-bold text-[#FFA90F] text-4xl'>Masjid Committee</h2>
             <div className='text-center block w-2/4 mx-auto'>
                 <img src={underline} className='w-6/12 mx-auto' alt="" />
