@@ -14,7 +14,7 @@ const Banner = () => {
         <div id="slide1" className="carousel-item relative w-full">
           <img src={banner1} className="w-full h-screen" alt='' />
           <div className='absolute flex justify-center mt-[200px] transform translate-x-2/4'>
-            <img className='w-3/4' src={kalema} alt="" />
+            <img className='' src={kalema} alt="" />
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide4" className="btn btn-circle bg-[#c4c4c46c]">❮</a>
@@ -45,6 +45,6 @@ const Banner = () => {
       </div>
     </section>
   );
-};
+}; 
 
 export default Banner;
