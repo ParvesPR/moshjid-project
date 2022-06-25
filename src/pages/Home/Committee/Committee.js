@@ -9,13 +9,6 @@ const Committee = () => {
             <div className='text-center block w-2/4 mx-auto'>
                 <img src={underline} className='w-6/12 mx-auto' alt="" />
             </div>
-
-            <div className='flex justify-center gap-5'>
-                <img src={image1} className='w-[285px] rounded-full border-8' alt="" />
-                <img src={image1} className='w-[285px] rounded-full border-8' alt="" />
-                <img src={image1} className='w-[285px] rounded-full border-8' alt="" />
-                <img src={image1} className='w-[285px] rounded-full border-8' alt="" />
-            </div>
         </section>
     );
 };
