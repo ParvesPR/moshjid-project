@@ -9,8 +9,8 @@ const Committee = () => {
             <div className='text-center block w-2/4 mx-auto'>
                 <img src={underline} className='w-6/12 mx-auto' alt="" />
             </div>
-            <div className='grid gap-5 grid-cols-4'>
-                <div> <img src={image1} className='w-6/12 rounded-full border-solid' alt="" /></div>
+            <div className='grid gap-5 grid-cols-4 my-5'>
+                <div> <img src={image1} className='w-6/12 rounded-full border-solid border-[#CA7628]' alt="" /></div>
             </div>
         </section>
     );
