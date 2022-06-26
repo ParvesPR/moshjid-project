@@ -1,0 +1,13 @@
+.footer-section {
+    background:linear-gradient(to bottom,#231F1F 0%, rgba(0, 0, 0, 0.5848) , 
+    rgba(0, 0, 0, 0)),url('../../../assests/images/footer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer-image .images{
+    transform: rotate(-90);
+}
+.images{
+    transform: rotate(-90);
+}
