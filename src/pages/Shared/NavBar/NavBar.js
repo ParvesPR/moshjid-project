@@ -10,6 +10,7 @@ const NavBar = () => {
     <li><Link to="/business">Blog</Link></li>
     <li><Link to="/reviews">Notice</Link></li>
     <li><Link to="/blogs">Users</Link></li>
+    <li><Link to="/login">Login</Link></li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
