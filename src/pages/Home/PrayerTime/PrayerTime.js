@@ -1,13 +1,12 @@
 import React from 'react';
-import prayerBanner from '../../../assests/images/prayer-banner.jpg'
+import './PrayerTime.css';
+import islamPilar from '../../../assests/images/islam-pilar.png';
 
 const PrayerTime = () => {
     return (
-        <section>
+        <section className='islam-pilar flex items-center'>
             <div>
-            </div>
-            <div>
-                <img src={prayerBanner} alt="" />
+                <img src={islamPilar} alt="" />
             </div>
         </section>
     );
