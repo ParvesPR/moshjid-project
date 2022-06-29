@@ -3,13 +3,14 @@ import Footer from '../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
 import Blogs from '../Blogs/Blogs';
 import Committee from '../Committee/Committee';
-import PrayerTime from '../PrayerTime/PrayerTime';
+import IslamiPillar from '../IslamiPillar/IslamiPillar';
+
 
 const Home = () => {
     return (
         <div>
            <Banner></Banner>
-           <PrayerTime></PrayerTime>
+           <IslamiPillar></IslamiPillar>
            <Committee></Committee> 
            <Blogs></Blogs>
            <Footer></Footer>
