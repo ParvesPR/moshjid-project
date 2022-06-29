@@ -1,16 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../../../assests/images/logo.png';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const NavBar = () => {
+
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth)
+};
+
   const menuItems = <>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/parts">About Us</Link></li>
     <li><Link to="/business">Blog</Link></li>
     <li><Link to="/reviews">Notice</Link></li>
     <li><Link to="/blogs">Users</Link></li>
-    <li><Link to="/login">Login</Link></li>
+    {/* <li><Link to="/login">Login</Link></li> */}
+
+    <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <NavLink to='/login' className='rounded-lg'>Login</NavLink>}</li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
