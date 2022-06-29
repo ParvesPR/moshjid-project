@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -29,7 +30,7 @@ const Login = () => {
         signInErrorMessage = <p className='text-red-400 pb-5 text-center'><small>{error?.message || gError?.message}</small></p>
     }
 
-    if (gUser) {
+    if (gUser || user) {
         console.log(gUser);
     }
 
@@ -43,7 +44,7 @@ const Login = () => {
 
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="text-center text-2xl font-bold">Login</h2>
+                    <h2 class="text-center text-2xl font-bold">লগিন</h2>
 
 
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -51,18 +52,18 @@ const Login = () => {
 
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                                <span class="label-text">Email</span>
+                                <span class="label-text">আপনার ই-মেইল</span>
                                
                             </label>
-                            <input type="email" placeholder="Your Email" class="input input-bordered w-full max-w-xs"
+                            <input type="email" placeholder="আপনার ই-মেইল লিখুন" class="input input-bordered w-full max-w-xs"
                             {...register("email", {
                                 required: {
                                     value: true,
-                                    message: "Email is Required"
+                                    message: "ই-মেইল আইডি দিতেই হবে"
                                 },
                                 pattern: {
                                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                  message: 'Please! Enter a valid Email' // JS only: <p>error message</p> TS only support string
+                                  message: 'দয়া করে, ভ্যালিড ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
                                 }
                               })} />
                             <label class="label">
@@ -75,18 +76,18 @@ const Login = () => {
 
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                                <span class="label-text">Password</span>
+                                <span class="label-text">পাসওয়ার্ড</span>
                                
                             </label>
-                            <input type="password" placeholder="Your Password" class="input input-bordered w-full max-w-xs"
+                            <input type="password" placeholder="আপনার পাসওয়ার্ড" class="input input-bordered w-full max-w-xs"
                             {...register("password", {
                                 required: {
                                     value: true,
-                                    message: "Password is Required"
+                                    message: "পাসওয়ার্ড দিতেই হবে"
                                 },
                                 minLength: {
                                   value: 8,
-                                  message: 'Must be 8 character or longer' // JS only: <p>error message</p> TS only support string
+                                  message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড হবে' // JS only: <p>error message</p> TS only support string
                                 }
                               })} />
                             <label class="label">
@@ -97,13 +98,14 @@ const Login = () => {
                         </div>
 
                         {signInErrorMessage}
-                        <input className='btn w-full' type="submit" value='Login' />
+                        <input className='btn w-full font-bold text-2xl' type="submit" value='লগিন' />
                     </form>
+                    <p className='text-center'><small>আমাদের ওয়েবসাইটে নতুন? <Link className='text-secondary' to='/signup'>রেজিস্ট্রেশন/সাইন-আপ করুন</Link></small></p>
 
-                    <div className="divider">OR</div>
+                    <div className="divider">অথবা</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-secondary font-bold">Login with Google</button>
+                        className="btn btn-secondary font-bold">গুগল-এর মাধ্যমে লগিন করুন</button>
                 </div>
             </div>
         </div>

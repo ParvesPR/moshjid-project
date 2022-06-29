@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../../../assests/images/logo.png';
 import auth from '../../../firebase.init';
@@ -15,11 +15,11 @@ const NavBar = () => {
 };
 
   const menuItems = <>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/parts">About Us</Link></li>
-    <li><Link to="/business">Blog</Link></li>
-    <li><Link to="/reviews">Notice</Link></li>
-    <li><Link to="/blogs">Users</Link></li>
+    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/parts">About Us</NavLink></li>
+    <li><NavLink to="/business">Blog</NavLink></li>
+    <li><NavLink to="/reviews">Notice</NavLink></li>
+    <li><NavLink to="/blogs">Users</NavLink></li>
     {/* <li><Link to="/login">Login</Link></li> */}
 
     <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <NavLink to='/login' className='rounded-lg'>Login</NavLink>}</li>
