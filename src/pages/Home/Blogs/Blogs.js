@@ -1,12 +1,14 @@
 import React from 'react';
+import comingSoon from '../../../assests/images/coming-soon.jpg'
 
 const Blogs = () => {
     return (
         <section>
-            
+
             <div>
-                <button className='text-white bg-[#FFA90F] font-bold'>See More</button>
+                <img src={comingSoon} alt="" />
             </div>
+            <button className='text-white bg-[#FFA90F] font-bold'>See More</button>
         </section>
     );
 };
