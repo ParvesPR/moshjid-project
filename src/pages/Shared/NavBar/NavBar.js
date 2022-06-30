@@ -9,7 +9,7 @@ const NavBar = () => {
     <li><Link to="/about">About Us</Link></li>
     <li><Link to="/blogs">Blog</Link></li>
     <li><Link to="/reviews">Notice</Link></li>
-    <li><Link to="/blogs">Users</Link></li>
+    <li><Link to="/users">Users</Link></li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
