@@ -7,7 +7,7 @@ const NavBar = () => {
   const menuItems = <>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/parts">About Us</Link></li>
-    <li><Link to="/business">Blog</Link></li>
+    <li><Link to="/blogs">Blog</Link></li>
     <li><Link to="/reviews">Notice</Link></li>
     <li><Link to="/blogs">Users</Link></li>
   </>
