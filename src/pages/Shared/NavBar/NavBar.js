@@ -15,7 +15,6 @@ const NavBar = () => {
 };
 
   const menuItems = <>
-<<<<<<< HEAD
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/parts">About Us</NavLink></li>
     <li><NavLink to="/business">Blog</NavLink></li>
@@ -24,13 +23,6 @@ const NavBar = () => {
     {/* <li><Link to="/login">Login</Link></li> */}
 
     <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <NavLink to='/login' className='rounded-lg'>Login</NavLink>}</li>
-=======
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/about">About Us</Link></li>
-    <li><Link to="/blogs">Blog</Link></li>
-    <li><Link to="/reviews">Notice</Link></li>
-    <li><Link to="/users">Users</Link></li>
->>>>>>> f6c010b93ff79fde18f21f5bd29b9c92ca3b4c69
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
