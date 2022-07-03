@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import Blogs from '../Blogs/Blogs';
 import Committee from '../Committee/Committee';
 import IslamiPillar from '../IslamiPillar/IslamiPillar';
+import PrayerTime from '../PrayerTime/PrayerTime';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
            <Banner></Banner>
            <IslamiPillar></IslamiPillar>
+           <PrayerTime></PrayerTime>
            <Committee></Committee> 
            <Blogs></Blogs>
            <Footer></Footer>
