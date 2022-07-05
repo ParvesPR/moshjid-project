@@ -1,0 +1,24 @@
+.prayer-section {
+    background: url(../../../assests//images/pattern-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'BenSen', Arial, sans-serif !important;
+}
+
+/* .cardBg::before{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #c4c4c4;
+}
+.cardBg{
+    background: url('../../../assests/images/card-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 80%;
+} */
