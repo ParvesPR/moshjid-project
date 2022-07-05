@@ -1,11 +1,11 @@
 import React from 'react';
 import './PrayerTime.css';
-import about from '../../../assests/images/about.jpg'
-import aboutBorder from '../../../assests/images/about-border.png'
+import about from '../../../assests/images/about.jpg';
+import aboutBorder from '../../../assests/images/about-border.png';
 
 const PrayerTime = () => {
     return (
-        <section className="prayer-section pt-12 pb-7 px-12 border-b-4 border-t-4 border-[#c4c4c4] flex justify-center gap-20">
+        <section className="prayer-section pt-12 pb-7 px-12 border-b-4 border-t-4 border-[#c4c4c4] flex flex-col lg:flex-row justify-center gap-20">
             <div className="cardBg card w-96 bg-[#e9e9e9] shadow-lg mb-3">
                 <div className="card-body text-3xl font-bold">
                     <div className='grid lg:grid-cols-3 border-b-2 border-[#c4c4c4] justify-items-center pb-2'>
@@ -57,10 +57,14 @@ const PrayerTime = () => {
             </div>
 
             <article>
-                <div className='grid grid-cols-2 gap-3'>
+                <div className='grid grid-cols-2 gap-2 justify-center items-center'>
                     <div className='relative'>
                         <img src={about} className='relative rounded-lg w-80 lg:h-[304px] z-[11]' alt="" />
                         <img src={aboutBorder} className='absolute -bottom-7 -left-7 z-[1] hidden lg:block' alt="" />
+                    </div>
+                    <div>
+                        <p className='text-6xl text-[#FFA810] font-bold text-center'>আমাদের</p>
+                        <p className='text-6xl text-[#FFA810] font-bold text-center'>সম্পর্কে</p>
                     </div>
                 </div>
             </article>
