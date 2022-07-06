@@ -21,6 +21,9 @@ const NavBar = () => {
     <li><NavLink to="/reviews">Notice</NavLink></li>
     <li><NavLink to="/blogs">Users</NavLink></li>
     {/* <li><Link to="/login">Login</Link></li> */}
+    {
+      user &&  <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+    }
 
     <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <NavLink to='/login' className='rounded-lg'>Login</NavLink>}</li>
   </>
