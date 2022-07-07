@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-fi
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import Loading from '../../Shared/Loading';
 
 const SignUp = () => {
 
@@ -22,7 +23,7 @@ const SignUp = () => {
 
 
     if(loading || gLoading){
-        <button class="btn loading">loading</button>
+        return <Loading></Loading>
     }
 
 

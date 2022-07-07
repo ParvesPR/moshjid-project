@@ -4,7 +4,6 @@ import Home from '../src/pages/Home/Home/Home';
 import Login from './pages/Home/Login/Login';
 import SignUp from './pages/Home/Login/SignUp';
 import Error404 from './pages/Shared/Error404';
-import NavBar from './pages/Shared/NavBar/NavBar';
 import Blogs from './pages/Home/Blogs/Blogs';
 import RequireAuth from './pages/Home/Login/RequireAuth';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -13,7 +12,6 @@ import Dashboard from './pages/Dashboard/Dashboard';
 function App() {
   return (
     <div>
-      <NavBar/>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
