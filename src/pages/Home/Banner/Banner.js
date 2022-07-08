@@ -9,7 +9,9 @@ import NavBar from '../../Shared/NavBar/NavBar';
 const Banner = () => {
   return (
     <section>
-      <NavBar></NavBar>
+      <div className='w-full absolute z-10 mt-24'>
+        <NavBar></NavBar>
+      </div>
       <div className="relative z-0 carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={banner1} className="w-full h-screen" alt='' />
@@ -45,6 +47,6 @@ const Banner = () => {
       </div>
     </section>
   );
-}; 
+};
 
 export default Banner;

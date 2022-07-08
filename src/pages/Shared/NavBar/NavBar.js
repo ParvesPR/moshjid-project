@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <header className='w-3/4 mx-auto relative'>
 
-      <nav className="navbar absolute z-10 mt-24 bg-[#c4c4c4ce] rounded-2xl">
+      <nav className="navbar bg-[#c4c4c4ce] rounded-2xl">
         <div className="navbar-start relative flex">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
