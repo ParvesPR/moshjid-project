@@ -7,6 +7,7 @@ import Error404 from './pages/Shared/Error404';
 import Blogs from './pages/Home/Blogs/Blogs';
 import RequireAuth from './pages/Home/Login/RequireAuth';
 import Dashboard from './pages/Dashboard/Dashboard';
+import About from './pages/About/About';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login/>} ></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
+        <Route path='/about' element={<About></About>} ></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
            <Dashboard/>
