@@ -2,38 +2,33 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
 
 const SignUp = () => {
-
-
     const { register, formState: { errors }, handleSubmit } = useForm();
-
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error
     ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
-
-
-
-    if(loading || gLoading){
+    if (loading || gLoading) {
         return <Loading></Loading>
     }
-
-
     let signInErrorMessage;
 
-    if(error || gError){
+    if (error || gError) {
         signInErrorMessage = <p className='text-red-400 pb-5 text-center'><small>{error?.message || gError?.message}</small></p>
     }
 
     if (gUser || user) {
+        navigate(from, { replace: true })
         console.log(gUser);
     }
 
@@ -56,41 +51,41 @@ const SignUp = () => {
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">আপনার নাম</span>
-                               
+
                             </label>
                             <input type="text" placeholder="আপনার নাম লিখুন" class="input input-bordered w-full max-w-xs"
-                            {...register("name", {
-                                required: {
-                                    value: true,
-                                    message: "নাম দিতেই হবে"
-                                }
-                              })} />
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: "নাম দিতেই হবে"
+                                    }
+                                })} />
                             <label class="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-300">{errors.name.message}</span>}
-                        
-                                
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-300">{errors.name.message}</span>}
+
+
                             </label>
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">আপনার ই-মেইল</span>
-                               
+
                             </label>
                             <input type="email" placeholder="আপনার ই-মেইল লিখুন" class="input input-bordered w-full max-w-xs"
-                            {...register("email", {
-                                required: {
-                                    value: true,
-                                    message: "ই-মেইল আইডি দিতেই হবে"
-                                },
-                                pattern: {
-                                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                  message: 'দয়া করে, ভ্যালিড ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
-                                }
-                              })} />
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: "ই-মেইল আইডি দিতেই হবে"
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'দয়া করে, ভ্যালিড ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
+                                    }
+                                })} />
                             <label class="label">
-                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
-                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
-                                
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
+
                             </label>
                         </div>
 
@@ -98,23 +93,23 @@ const SignUp = () => {
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">পাসওয়ার্ড</span>
-                               
+
                             </label>
                             <input type="password" placeholder="আপনার পাসওয়ার্ড" class="input input-bordered w-full max-w-xs"
-                            {...register("password", {
-                                required: {
-                                    value: true,
-                                    message: "পাসওয়ার্ড দিতেই হবে"
-                                },
-                                minLength: {
-                                  value: 8,
-                                  message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড হবে' // JS only: <p>error message</p> TS only support string
-                                }
-                              })} />
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: "পাসওয়ার্ড দিতেই হবে"
+                                    },
+                                    minLength: {
+                                        value: 8,
+                                        message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড হবে' // JS only: <p>error message</p> TS only support string
+                                    }
+                                })} />
                             <label class="label">
-                            {errors.password?.type === 'required' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
-                            {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
-                                
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
+
                             </label>
                         </div>
 
