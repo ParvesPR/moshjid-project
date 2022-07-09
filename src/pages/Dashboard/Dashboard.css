@@ -1,0 +1,7 @@
+.side-bg {
+    background:linear-gradient(to bottom,#231F1F 0%, rgba(0, 0, 0, 0.5848) , 
+    rgba(0, 0, 0, 0.571)),url('../../assests/images/card-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
