@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../../../assests/images/logo.png';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
+import './NavBar.css';
+import CustomLink from '../CustomLink/CustomLink';
 
 const NavBar = () => {
 
@@ -15,21 +16,21 @@ const NavBar = () => {
 };
 
   const menuItems = <>
-    <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/about">About Us</NavLink></li>
-    <li><NavLink to="/blogs">Blogs</NavLink></li>
-    <li><NavLink to="/notice">Notice</NavLink></li>
-    <li><NavLink to="/users">Users</NavLink></li>
+    <li><CustomLink to="/">হোম</CustomLink></li>
+    <li><CustomLink to="/about">আমাদের সম্পর্কে</CustomLink></li>
+    <li><CustomLink to="/blogs">ব্লগ</CustomLink></li>
+    <li><CustomLink to="/notice">নোটিশ</CustomLink></li>
+    <li><CustomLink to="/users">ইউজার</CustomLink></li>
     {
-      user &&  <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+      user &&  <li><CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink></li>
     }
 
-    <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <NavLink to='/login' className='rounded-lg'>Login</NavLink>}</li>
+    <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <CustomLink to='/login' className='rounded-lg'>Login</CustomLink>}</li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
 
-      <nav className="navbar bg-[#c4c4c4ce] rounded-2xl">
+      <nav className="navbar bg-[#c4c4c4ce] rounded-2xl navbar-font">
         <div className="navbar-start relative flex">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
