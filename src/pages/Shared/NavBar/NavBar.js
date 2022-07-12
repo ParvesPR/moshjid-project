@@ -25,7 +25,7 @@ const NavBar = () => {
       user &&  <li><CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink></li>
     }
 
-    <li>{user ? <button onClick={logout} className='btn btn-ghost'> Sign Out</button> : <CustomLink to='/login' className='rounded-lg'>Login</CustomLink>}</li>
+    <li>{user ? <button onClick={logout} className='btn btn-outline btn-primary'>লগ আউট</button> : <CustomLink to='/login' className='rounded-lg'>Login</CustomLink>}</li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>
