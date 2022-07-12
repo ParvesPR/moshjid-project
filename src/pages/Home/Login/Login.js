@@ -6,8 +6,11 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
 import NavBar from '../../Shared/NavBar/NavBar';
 import './Login.css';
+import { useState } from 'react';
+import { AiFillEye } from "react-icons/ai";
 
 const Login = () => {
+    const [passwordShow, setPasswordShow] = useState(false)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
@@ -39,6 +42,10 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
+    };
+
+    const togglePassword = () => {
+        setPasswordShow(!passwordShow);
     }
 
     return (
@@ -78,19 +85,23 @@ const Login = () => {
                             <div class="form-control w-full max-w-xs">
                                 <label class="label">
                                     <span class="label-text text-white text-lg">পাসওয়ার্ড</span>
-
                                 </label>
-                                <input type="password" placeholder="আপনার পাসওয়ার্ড" class="bg-[#00000043] shadow-xl border-blue-500 text-white input input-bordered w-full max-w-xs"
-                                    {...register("password", {
-                                        required: {
-                                            value: true,
-                                            message: "পাসওয়ার্ড দিতেই হবে"
-                                        },
-                                        minLength: {
-                                            value: 8,
-                                            message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড দিতে হবে' // JS only: <p>error message</p> TS only support string
-                                        }
-                                    })} />
+
+                                <div className='input-group'>
+                                    <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" class="bg-[#00000043] shadow-xl border-blue-500 text-white input input-bordered w-full max-w-xs"
+                                        {...register("password", {
+                                            required: {
+                                                value: true,
+                                                message: "পাসওয়ার্ড দিতেই হবে"
+                                            },
+                                            minLength: {
+                                                value: 8,
+                                                message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড দিতে হবে' // JS only: <p>error message</p> TS only support string
+                                            }
+                                        })}
+                                    />
+                                    <span className='bg-[#00000043] border border-blue-500'><i className='text-white cursor-pointer text-sm' onClick={togglePassword}><AiFillEye className='text-lg'></AiFillEye></i></span>
+                                </div>
                                 <label class="label">
                                     {errors.password?.type === 'required' && <span className="label-text-alt text-red-400 text-lg">{errors.password.message}</span>}
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-400 text-lg">{errors.password.message}</span>}
