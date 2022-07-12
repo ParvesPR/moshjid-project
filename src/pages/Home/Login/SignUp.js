@@ -4,8 +4,11 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
+import { useState } from 'react';
+import { AiFillEye } from "react-icons/ai";
 
 const SignUp = () => {
+    const [passwordShow, setPasswordShow] = useState(false);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
@@ -35,6 +38,10 @@ const SignUp = () => {
     const onSubmit = data => {
         console.log(data);
         createUserWithEmailAndPassword(data.email, data.password)
+    };
+
+    const togglePassword = () => {
+        setPasswordShow(!passwordShow);
     }
 
     return (
@@ -79,7 +86,7 @@ const SignUp = () => {
                                     },
                                     pattern: {
                                         value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                        message: 'দয়া করে, ভ্যালিড ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
+                                        message: 'দয়া করে, সঠিক ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
                                     }
                                 })} />
                             <label class="label">
@@ -95,17 +102,20 @@ const SignUp = () => {
                                 <span class="label-text">পাসওয়ার্ড</span>
 
                             </label>
-                            <input type="password" placeholder="আপনার পাসওয়ার্ড" class="input input-bordered w-full max-w-xs"
-                                {...register("password", {
-                                    required: {
-                                        value: true,
-                                        message: "পাসওয়ার্ড দিতেই হবে"
-                                    },
-                                    minLength: {
-                                        value: 8,
-                                        message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড হবে' // JS only: <p>error message</p> TS only support string
-                                    }
-                                })} />
+                            <div className='input-group'>
+                                <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" class="input input-bordered w-full max-w-xs"
+                                    {...register("password", {
+                                        required: {
+                                            value: true,
+                                            message: "পাসওয়ার্ড দিতেই হবে"
+                                        },
+                                        minLength: {
+                                            value: 8,
+                                            message: 'ন্যূনতম ৮ সংখ্যার পাসওয়ার্ড হবে' // JS only: <p>error message</p> TS only support string
+                                        }
+                                    })} />
+                                <span className='bg-[#fefefe43] border border-[#9CA3AF]'><i className='text-white cursor-pointer text-sm' onClick={togglePassword}><AiFillEye className='text-lg text-[#a6a6a6da]'></AiFillEye></i></span>
+                            </div>
                             <label class="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
@@ -114,7 +124,7 @@ const SignUp = () => {
                         </div>
 
                         {signInErrorMessage}
-                        <input className='btn w-full font-bold text-2xl' type="submit" value='রেজিস্ট্রেশন/সাইন-আপ' />
+                        <input className='btn w-full font-bold text-xl' type="submit" value='রেজিস্ট্রেশন/সাইন-আপ' />
                     </form>
                     <p className='text-center'><small>পূর্বেই রেজিস্ট্রেশন করেছেন? <Link className='text-secondary' to='/login'>লগ-ইন করুন</Link></small></p>
 
