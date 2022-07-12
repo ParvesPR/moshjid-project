@@ -9,6 +9,7 @@ import RequireAuth from './pages/Home/Login/RequireAuth';
 import Dashboard from './pages/Dashboard/Dashboard';
 import About from './pages/About/About';
 import Notice from './pages/Notice/Notice';
+import AddNotice from './pages/Dashboard/AddNotice/AddNotice';
 
 
 function App() {
@@ -17,17 +18,19 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
-        <Route path='/login' element={<Login/>} ></Route>
-        <Route path='/signup' element={<SignUp/>}></Route>
+        <Route path='/login' element={<Login />} ></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/notice' element={<Notice></Notice>} ></Route>
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
-           <Dashboard/>
+            <Dashboard />
           </RequireAuth>
-        } ></Route>
-        <Route path='*' element={<Error404/>}></Route>
+        } >
+          <Route path='addNotice' element={<AddNotice></AddNotice>}></Route>
+        </Route>
+        <Route path='*' element={<Error404 />}></Route>
       </Routes>
 
     </div>
