@@ -55,7 +55,7 @@ const Login = () => {
             </div>
             <div className='login-form flex h-screen justify-center items-center'>
 
-                <div class="card lg:max-w-lg bg-[#0F2834] shadow-xl">
+                <div class="card w-96 bg-[#0F2834] shadow-xl">
                     <div class="card-body">
                         <h2 class="text-center text-3xl font-semibold text-white">লগইন</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
