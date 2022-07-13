@@ -53,38 +53,38 @@ const SignUp = () => {
             </div>
             <div className='flex flex-col lg:flex-row justify-evenly items-center gap-5'>
                 <img className='w-2/4' src={signUp} alt="" />
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <h2 class="text-center text-2xl font-bold">রেজিস্ট্রেশন/সাইন-আপ</h2>
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="text-center text-2xl font-bold">রেজিস্ট্রেশন/সাইন-আপ</h2>
 
 
                         <form onSubmit={handleSubmit(onSubmit)}>
 
 
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text text-lg">আপনার নাম</span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text text-lg">আপনার নাম</span>
 
                                 </label>
-                                <input type="text" placeholder="আপনার নাম লিখুন" class="text-md input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="আপনার নাম লিখুন" className="text-md input input-bordered w-full max-w-xs"
                                     {...register("name", {
                                         required: {
                                             value: true,
                                             message: "নাম দিতেই হবে"
                                         }
                                     })} />
-                                <label class="label">
+                                <label className="label">
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-300">{errors.name.message}</span>}
 
 
                                 </label>
                             </div>
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text text-lg">আপনার ই-মেইল</span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text text-lg">আপনার ই-মেইল</span>
 
                                 </label>
-                                <input type="email" placeholder="আপনার ই-মেইল লিখুন" class="text-md input input-bordered w-full max-w-xs"
+                                <input type="email" placeholder="আপনার ই-মেইল লিখুন" className="text-md input input-bordered w-full max-w-xs"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -95,7 +95,7 @@ const SignUp = () => {
                                             message: 'দয়া করে, সঠিক ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
                                         }
                                     })} />
-                                <label class="label">
+                                <label className="label">
                                     {errors.email?.type === 'required' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
 
@@ -103,13 +103,13 @@ const SignUp = () => {
                             </div>
 
 
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text text-lg">পাসওয়ার্ড</span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text text-lg">পাসওয়ার্ড</span>
 
                                 </label>
                                 <div className='input-group'>
-                                    <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" class="text-md input input-bordered w-full max-w-xs"
+                                    <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" className="text-md input input-bordered w-full max-w-xs"
                                         {...register("password", {
                                             required: {
                                                 value: true,
@@ -122,7 +122,7 @@ const SignUp = () => {
                                         })} />
                                     <span className='bg-[#fefefe43] border border-[#9CA3AF]'><i className='text-white cursor-pointer text-sm' onClick={togglePassword}><AiFillEye className='text-lg text-[#a6a6a6da]'></AiFillEye></i></span>
                                 </div>
-                                <label class="label">
+                                <label className="label">
                                     {errors.password?.type === 'required' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
 

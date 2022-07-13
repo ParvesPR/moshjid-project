@@ -10,16 +10,16 @@ const Dashboard = () => {
             <div className='pt-7 pb-2'>
                 <NavBar></NavBar>
             </div>
-            <div class="drawer drawer-mobile bg-base-300">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content">
+            <div className="drawer drawer-mobile bg-base-300">
+                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content">
                     <h1 className='uppercase font-bold text-3xl text-center text-purple-500 py-10'>Welcome To Dashboard</h1>
                     <Outlet />
 
                 </div>
-                <div class="drawer-side">
-                    <label for="my-drawer-2" class="drawer-overlay"></label>
-                    <ul class="custom-font side-bg menu px-4 py-10 overflow-y-auto w-80 text-white">
+                <div className="drawer-side">
+                    <label for="my-drawer-2" className="drawer-overlay"></label>
+                    <ul className="custom-font side-bg menu px-4 py-10 overflow-y-auto w-80 text-white">
                         <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">আমার প্রোফাইল</NavLink>
                         <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">সকল ব্যবহারকারী</NavLink>
                         <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addNotice">নতুন নোটিশ যোগ করুন</NavLink>

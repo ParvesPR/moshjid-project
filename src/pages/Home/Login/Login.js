@@ -55,16 +55,16 @@ const Login = () => {
             </div>
             <div className='login-form flex h-screen justify-center items-center'>
 
-                <div class="card w-96 bg-[#0F2834] shadow-xl">
-                    <div class="card-body">
-                        <h2 class="text-center text-3xl font-semibold text-white">লগইন</h2>
+                <div className="card w-96 bg-[#0F2834] shadow-xl">
+                    <div className="card-body">
+                        <h2 className="text-center text-3xl font-semibold text-white">লগইন</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <div class="form-control w-full max-w-xs text-white">
-                                <label class="label">
-                                    <span class="label-text text-white text-lg">আপনার ই-মেইল</span>
+                            <div className="form-control w-full max-w-xs text-white">
+                                <label className="label">
+                                    <span className="label-text text-white text-lg">আপনার ই-মেইল</span>
 
                                 </label>
-                                <input type="email" placeholder="আপনার ই-মেইল লিখুন" class="bg-[#00000043] shadow-xl border-blue-500 input input-bordered w-full max-w-xs"
+                                <input type="email" placeholder="আপনার ই-মেইল লিখুন" className="bg-[#00000043] shadow-xl border-blue-500 input input-bordered w-full max-w-xs"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -75,20 +75,20 @@ const Login = () => {
                                             message: 'দয়া করে, সঠিক ই-মেইল আইডি প্রদান করুন' // JS only: <p>error message</p> TS only support string
                                         }
                                     })} />
-                                <label class="label">
+                                <label className="label">
                                     {errors.email?.type === 'required' && <span className="label-text-alt text-red-400 text-lg">{errors.email.message}</span>}
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-400 text-lg">{errors.email.message}</span>}
 
                                 </label>
                             </div>
 
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text text-white text-lg">পাসওয়ার্ড</span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text text-white text-lg">পাসওয়ার্ড</span>
                                 </label>
 
                                 <div className='input-group'>
-                                    <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" class="bg-[#00000043] shadow-xl border-blue-500 text-white input input-bordered w-full max-w-xs"
+                                    <input type={passwordShow ? "text" : "password"} placeholder="আপনার পাসওয়ার্ড" className="bg-[#00000043] shadow-xl border-blue-500 text-white input input-bordered w-full max-w-xs"
                                         {...register("password", {
                                             required: {
                                                 value: true,
@@ -102,7 +102,7 @@ const Login = () => {
                                     />
                                     <span className='bg-[#00000043] border border-blue-500'><i className='text-white cursor-pointer text-sm' onClick={togglePassword}><AiFillEye className='text-lg'></AiFillEye></i></span>
                                 </div>
-                                <label class="label">
+                                <label className="label">
                                     {errors.password?.type === 'required' && <span className="label-text-alt text-red-400 text-lg">{errors.password.message}</span>}
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-400 text-lg">{errors.password.message}</span>}
 
