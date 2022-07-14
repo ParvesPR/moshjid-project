@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 const AddNotice = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -18,7 +19,11 @@ const AddNotice = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
-                    alert('success')
+                    Swal.fire(
+                        'Good job!',
+                        'You clicked the button!',
+                        'success'
+                    )
                     reset();
                 }
             })

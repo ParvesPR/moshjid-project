@@ -18,7 +18,7 @@ const Dashboard = () => {
 
                 </div>
                 <div className="drawer-side">
-                    <label for="my-drawer-2" className="drawer-overlay"></label>
+                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="custom-font side-bg menu px-4 py-10 overflow-y-auto w-80 text-white">
                         <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">আমার প্রোফাইল</NavLink>
                         <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">সকল ব্যবহারকারী</NavLink>

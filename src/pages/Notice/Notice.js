@@ -1,8 +1,19 @@
 import React from 'react';
 import NavBar from '../Shared/NavBar/NavBar';
 import noticeIcon from '../../assests/images/notice-icon.png';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 
 const Notice = () => {
+    const { data: allNotice, isLoading, refetch } = useQuery('notice', () =>
+        fetch('http://localhost:5000/notice', {
+            method: 'GET'
+        })
+            .then(res => res.json())
+    );
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <section className='font-bensen bg-base-200 min-h-screen'>
             <div className='pt-10'>
@@ -10,8 +21,8 @@ const Notice = () => {
             </div>
             <div>
                 <h2 className='text-5xl font-bold flex justify-center items-center text-center py-7'>
-                <img src={noticeIcon} className='w-10 mr-3' alt="" />
-                    নোটিশ বোর্ড</h2>
+                    <img src={noticeIcon} className='w-10 mr-3' alt="" />
+                    নোটিশ বোর্ডঃ {allNotice.length} </h2>
             </div>
         </section>
     );
