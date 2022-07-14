@@ -21,7 +21,7 @@ const AddNotice = () => {
                 if (result.insertedId) {
                     Swal.fire(
                         'Good job!',
-                        'You clicked the button!',
+                        'সফলভাবে নোটিশ পোষ্ট করা হয়েছে !',
                         'success'
                     )
                     reset();

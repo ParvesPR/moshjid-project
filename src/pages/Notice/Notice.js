@@ -6,6 +6,7 @@ import Loading from '../Shared/Loading';
 import AllNotice from './AllNotice';
 
 const Notice = () => {
+    
     const { data: allNotice, isLoading } = useQuery('notice', () =>
         fetch('http://localhost:5000/notice', {
             method: 'GET'
@@ -14,7 +15,8 @@ const Notice = () => {
     );
     if (isLoading) {
         return <Loading></Loading>
-    }
+    };
+
     return (
         <section className='font-bensen bg-base-200 min-h-screen'>
             <div className='pt-10'>
