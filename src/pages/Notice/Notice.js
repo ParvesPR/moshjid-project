@@ -26,7 +26,7 @@ const Notice = () => {
                 <h2 className='text-5xl font-bold flex justify-center items-center text-center py-7'>
                     <img src={noticeIcon} className='w-10 mr-3' alt="" />
                     নোটিশ বোর্ডঃ {allNotice.length} </h2>
-                <article className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
+                <article className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'>
                     {
                         allNotice.map(notice => <AllNotice
                             key={notice._id}
