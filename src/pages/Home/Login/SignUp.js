@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { AiFillEye } from "react-icons/ai";
 import signUp from '../../../assests/images/signup.jpg'
 import NavBar from '../../Shared/NavBar/NavBar';
+import useToken from '../../../hooks/useToken';
 
 const SignUp = () => {
     const [passwordShow, setPasswordShow] = useState(false);
@@ -19,6 +20,7 @@ const SignUp = () => {
         loading,
         error
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [token] = useToken(gUser || user)
     const navigate = useNavigate();
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
@@ -74,7 +76,7 @@ const SignUp = () => {
                                         }
                                     })} />
                                 <label className="label">
-                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-300">{errors.name.message}</span>}
+                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.name.message}</span>}
 
 
                                 </label>
@@ -96,8 +98,8 @@ const SignUp = () => {
                                         }
                                     })} />
                                 <label className="label">
-                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
-                                    {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-300">{errors.email.message}</span>}
+                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.email.message}</span>}
+                                    {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600 text-lg">{errors.email.message}</span>}
 
                                 </label>
                             </div>
@@ -123,8 +125,8 @@ const SignUp = () => {
                                     <span className='bg-[#fefefe43] border border-[#9CA3AF]'><i className='text-white cursor-pointer text-sm' onClick={togglePassword}><AiFillEye className='text-lg text-[#a6a6a6da]'></AiFillEye></i></span>
                                 </div>
                                 <label className="label">
-                                    {errors.password?.type === 'required' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
-                                    {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-300">{errors.password.message}</span>}
+                                    {errors.password?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.password.message}</span>}
+                                    {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-600 text-lg">{errors.password.message}</span>}
 
                                 </label>
                             </div>
