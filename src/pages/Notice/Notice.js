@@ -6,10 +6,13 @@ import Loading from '../Shared/Loading';
 import AllNotice from './AllNotice';
 
 const Notice = () => {
-    
+
     const { data: allNotice, isLoading } = useQuery('notice', () =>
         fetch('http://localhost:5000/notice', {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
         })
             .then(res => res.json())
     );

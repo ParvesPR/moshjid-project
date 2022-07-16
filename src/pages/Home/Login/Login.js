@@ -8,6 +8,8 @@ import NavBar from '../../Shared/NavBar/NavBar';
 import './Login.css';
 import { useState } from 'react';
 import { AiFillEye } from "react-icons/ai";
+import useToken from '../../../hooks/useToken';
+import { useEffect } from 'react';
 
 const Login = () => {
     const [passwordShow, setPasswordShow] = useState(false)
@@ -19,10 +21,17 @@ const Login = () => {
         loading,
         error
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(gUser || user)
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true })
+        }
+    }, [from, navigate, token])
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -34,13 +43,7 @@ const Login = () => {
         signInErrorMessage = <p className='text-red-400 pb-5 text-center'><small>{error?.message || gError?.message}</small></p>
     }
 
-    if (gUser || user) {
-        navigate(from, { replace: true })
-        console.log(gUser);
-    }
-
     const onSubmit = data => {
-        console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
     };
 

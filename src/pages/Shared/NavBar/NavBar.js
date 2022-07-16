@@ -12,8 +12,9 @@ const NavBar = () => {
   const [user] = useAuthState(auth);
 
   const logout = () => {
-    signOut(auth)
-};
+    signOut(auth);
+    localStorage.removeItem('accessToken')
+  };
 
   const menuItems = <>
     <li><CustomLink to="/">হোম</CustomLink></li>
@@ -22,10 +23,9 @@ const NavBar = () => {
     <li><CustomLink to="/notice">নোটিশ</CustomLink></li>
     <li><CustomLink to="/users">ইউজার</CustomLink></li>
     {
-      user &&  <li><CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink></li>
+      user && <li><CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink></li>
     }
-
-    <li>{user ? <button onClick={logout} className='btn btn-outline btn-primary'>লগ আউট</button> :<CustomLink to='/login' className='rounded-lg'>লগইন</CustomLink>}</li>
+    <li>{user ? <button onClick={logout} className='btn btn-outline btn-primary'>লগ আউট</button> : <CustomLink to='/login' className='rounded-lg'>লগইন</CustomLink>}</li>
   </>
   return (
     <header className='w-3/4 mx-auto relative'>

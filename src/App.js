@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import About from './pages/About/About';
 import Notice from './pages/Notice/Notice';
 import AddNotice from './pages/Dashboard/AddNotice/AddNotice';
+import Users from './pages/Users/Users';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/notice' element={<Notice></Notice>} ></Route>
         <Route path='/about' element={<About></About>} ></Route>
+        <Route path='/users' element={<Users></Users>} ></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
