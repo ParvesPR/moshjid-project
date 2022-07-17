@@ -19,7 +19,9 @@ const Users = () => {
             <div className='pt-10'>
                 <NavBar></NavBar>
             </div>
-            <h2 className='text-purple-400 font-bold text-center py-5 font-bensen text-3xl'>মোট ব্যবহারকারীর সংখ্যাঃ {users.length}</h2>
+            <h2 className='text-purple-600 font-bold text-center py-5 font-bensen text-3xl'>মোট ব্যবহারকারীর সংখ্যাঃ <span className='text-red-500'>{users.length.toLocaleString('bn-BD')}</span></h2>
+
+           
         </section>
     );
 };

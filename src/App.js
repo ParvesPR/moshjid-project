@@ -11,6 +11,8 @@ import About from './pages/About/About';
 import Notice from './pages/Notice/Notice';
 import AddNotice from './pages/Dashboard/AddNotice/AddNotice';
 import Users from './pages/Users/Users';
+import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
+
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
           </RequireAuth>
         } >
           <Route path='addNotice' element={<AddNotice></AddNotice>}></Route>
+          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
         </Route>
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
