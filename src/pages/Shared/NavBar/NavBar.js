@@ -22,8 +22,8 @@ const NavBar = () => {
     <li><CustomLink to="/blogs">ব্লগ</CustomLink></li>
 
     <li>{user && <>
-      <li><CustomLink to="/notice">নোটিশ</CustomLink></li>
-      <li><CustomLink to="/users">ইউজার</CustomLink></li>
+      <CustomLink to="/notice">নোটিশ</CustomLink>
+      <CustomLink to="/users">ইউজার</CustomLink>
       <CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink>
     </>
     }

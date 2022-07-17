@@ -1,10 +1,19 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
-const User = () => {
+const User = ({ index, user }) => {
+    const [users] = useAuthState(auth)
+    const { email } = user;
     return (
-        <div>
-            
-        </div>
+        <>
+            <tr>
+                <th>{index + 1}</th>
+                <td>{users.displayName}</td>
+                <td>{email}</td>
+            </tr>
+        </>
+
     );
 };
 
