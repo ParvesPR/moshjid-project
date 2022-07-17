@@ -20,11 +20,15 @@ const NavBar = () => {
     <li><CustomLink to="/">হোম</CustomLink></li>
     <li><CustomLink to="/about">আমাদের সম্পর্কে</CustomLink></li>
     <li><CustomLink to="/blogs">ব্লগ</CustomLink></li>
-    <li><CustomLink to="/notice">নোটিশ</CustomLink></li>
-    <li><CustomLink to="/users">ইউজার</CustomLink></li>
-    {
-      user && <li><CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink></li>
+
+    <li>{user && <>
+      <li><CustomLink to="/notice">নোটিশ</CustomLink></li>
+      <li><CustomLink to="/users">ইউজার</CustomLink></li>
+      <CustomLink to="/dashboard">ড্যাশবোর্ড</CustomLink>
+    </>
     }
+    </li>
+
     <li>{user ? <button onClick={logout} className='btn btn-outline btn-primary'>লগ আউট</button> : <CustomLink to='/login' className='rounded-lg'>লগইন</CustomLink>}</li>
   </>
   return (

@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 
 const AllUsers = () => {
-    const { data: users, isLoading } = useQuery('user', () => 
+    const { data: users, isLoading } = useQuery('user', () =>
         fetch('http://localhost:5000/users', {
             method: 'GET',
             headers: {
