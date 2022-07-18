@@ -1,9 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 import User from '../AllUsers/User/User.js';
+import DeleteUser from './DeleteUser/DeleteUser';
 
 const AllUsers = () => {
+    const [manageUser, setManageUser] = useState(null);
     const { data: users, isLoading } = useQuery('user', () =>
         fetch('http://localhost:5000/users', {
             method: 'GET',
@@ -27,6 +30,8 @@ const AllUsers = () => {
                             <th>Index</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Category</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,13 +39,16 @@ const AllUsers = () => {
                             users.map((user, index) => <User
                                 key={user._id}
                                 index={index}
+                                setManageUser={setManageUser}
                                 user={user}
                             ></User>)
                         }
-
                     </tbody>
                 </table>
             </div>
+            {manageUser && <DeleteUser
+                manageUser={manageUser}
+            ></DeleteUser>}
         </section>
     );
 };
