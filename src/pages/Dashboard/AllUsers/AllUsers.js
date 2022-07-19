@@ -1,14 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 import User from '../AllUsers/User/User.js';
-import DeleteUser from './DeleteUser/DeleteUser';
 
 const AllUsers = () => {
-    const [manageUser, setManageUser] = useState(null);
-    const { data: users, isLoading } = useQuery('user', () =>
-        fetch('http://localhost:5000/users', {
+
+    const { data: users, isLoading, refetch } = useQuery('user', () =>
+        fetch('http://localhost:5000/user', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,16 +37,13 @@ const AllUsers = () => {
                             users.map((user, index) => <User
                                 key={user._id}
                                 index={index}
-                                setManageUser={setManageUser}
+                                refetch={refetch}
                                 user={user}
                             ></User>)
                         }
                     </tbody>
                 </table>
             </div>
-            {manageUser && <DeleteUser
-                manageUser={manageUser}
-            ></DeleteUser>}
         </section>
     );
 };
