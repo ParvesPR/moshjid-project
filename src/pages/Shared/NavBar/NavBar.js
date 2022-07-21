@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import './NavBar.css';
 import CustomLink from '../CustomLink/CustomLink';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -44,9 +45,17 @@ const NavBar = () => {
               {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
-            <img src={logo} className='absolute ml-10 left-8 top-[-35px] w-[90px] h-[90px]' alt="" />
-          </a>
+          <button className="btn btn-ghost normal-case text-xl">
+            <Link to='/home'>
+              <img src={logo} className='absolute ml-10 left-8 top-[-35px] w-[90px] h-[90px]' alt="" />
+            </Link>
+          </button>
+        </div>
+
+        <div className="navbar-end">
+          <label title='Dashboard' for="my-drawer" class="btn btn-ghost  drawer-button d-block lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" checked /></svg>
+          </label>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

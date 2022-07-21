@@ -45,6 +45,8 @@ const User = ({ index, user, refetch }) => {
                 <td>{email}</td>
                 <td>
                     {role !== 'admin' && <button onClick={handleMakeAdmin} className='btn btn-xs'>Make Admin</button>}
+                    {role === 'admin' && <button className='btn btn-xs'>Admin</button>}
+                    
                 </td>
                 <td>
                     <label htmlFor="delete-user-modal" className="cursor-pointer modal-button"><RiDeleteBin6Line /></label>

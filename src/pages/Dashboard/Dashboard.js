@@ -11,7 +11,7 @@ const Dashboard = () => {
                 <NavBar></NavBar>
             </div>
             <div className="drawer drawer-mobile bg-base-300">
-                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <h1 className='uppercase font-bold text-3xl text-center text-purple-500 py-10'>Welcome To Dashboard</h1>
                     <Outlet />
