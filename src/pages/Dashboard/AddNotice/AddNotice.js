@@ -6,13 +6,11 @@ const AddNotice = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const handleAddItem = data => {
-        console.log('data', data)
-
-        const url = 'http://localhost:5000/notice';
-        fetch(url, {
+        fetch('http://localhost:5000/addNotice', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(data)
         })
@@ -33,7 +31,6 @@ const AddNotice = () => {
     }
     return (
         <section>
-            {/* INPUT FORM */}
 
             <div className='flex  justify-center items-center font-bensen'>
 
