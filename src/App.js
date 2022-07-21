@@ -12,6 +12,7 @@ import Notice from './pages/Notice/Notice';
 import AddNotice from './pages/Dashboard/AddNotice/AddNotice';
 import Users from './pages/Users/Users';
 import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
+import RequireAdmin from './pages/Home/Login/RequireAdmin';
 
 
 
@@ -32,8 +33,16 @@ function App() {
             <Dashboard />
           </RequireAuth>
         } >
-          <Route path='addNotice' element={<AddNotice></AddNotice>}></Route>
-          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
+          <Route path='addNotice' element={
+            <RequireAdmin>
+              <AddNotice></AddNotice>
+            </RequireAdmin>
+          }></Route>
+          <Route path='allUsers' element={
+            <RequireAdmin>
+              <AllUsers></AllUsers>
+            </RequireAdmin>
+          }></Route>
         </Route>
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
