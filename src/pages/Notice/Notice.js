@@ -6,8 +6,7 @@ import Loading from '../Shared/Loading';
 import AllNotice from './AllNotice';
 
 const Notice = () => {
-
-    const { data: allNotice, isLoading } = useQuery('notice', () =>
+    const { data: allNotice, isLoading,refetch } = useQuery('notice', () =>
         fetch('http://localhost:5000/notice', {
             method: 'GET',
             headers: {
@@ -34,6 +33,7 @@ const Notice = () => {
                         allNotice.map(notice => <AllNotice
                             key={notice._id}
                             notice={notice}
+                            refetch={refetch}
                         ></AllNotice>)
                     }
                 </article>
