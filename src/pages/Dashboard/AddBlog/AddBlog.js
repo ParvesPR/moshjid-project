@@ -1,8 +1,9 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 const AddBlog = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const imgStoreKey = '3528b3ade157fe6b5d8fedbb6b473c09';
     const onSubmit = async data => {
         console.log('data', data)
@@ -21,11 +22,33 @@ const AddBlog = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const blog = {
-                        name: data.tile,
+                        title: data.title,
                         subject: data.subject,
                         media: data.media,
                         image: img
-                    }
+                    };
+
+                    // SEND TO DATABASE
+                    fetch('http://localhost:5000/blogs', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(blog)
+                    })
+                        .then(res => res.json())
+                        .then(inserted => {
+                            console.log('insert', inserted);
+                            if (inserted.insertedId) {
+                                Swal.fire(
+                                    'Good job!',
+                                    'সফলভাবে ব্লগ পোষ্ট করা হয়েছে !',
+                                    'success'
+                                )
+                                reset();
+                            }
+                        })
                 }
             })
 
