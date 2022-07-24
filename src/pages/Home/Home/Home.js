@@ -1,22 +1,22 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
-import Blogs from '../Blogs/Blogs';
 import Committee from '../Committee/Committee';
+import HomeBlog from '../HomeBlog/HomeBlog';
 import IslamiPillar from '../IslamiPillar/IslamiPillar';
 import PrayerTime from '../PrayerTime/PrayerTime';
 
 
 const Home = () => {
     return (
-        <div>
+        <section>
             <Banner></Banner>
             <IslamiPillar></IslamiPillar>
             <PrayerTime></PrayerTime>
             <Committee></Committee>
-            <Blogs></Blogs>
+            <HomeBlog></HomeBlog>
             <Footer></Footer>
-        </div>
+        </section>
     );
 };
 
