@@ -53,7 +53,7 @@ const AllNotice = ({ notice, refetch }) => {
                 <div className="card-body">
                     <div className='flex items-center gap-5 justify-between'>
                         <h2 className="card-title">{name}</h2>
-                        {admin && <span onClick={() => deleteConfirm(_id)} className=' font-bensen border-red-600 rounded-full border-2 p-1 cursor-pointer'><RiDeleteBin6Line /></span>}
+                        {admin && <span title='Delete' onClick={() => deleteConfirm(_id)} className=' font-bensen border-red-600 rounded-full border-2 p-1 cursor-pointer'><RiDeleteBin6Line /></span>}
 
                     </div>
 

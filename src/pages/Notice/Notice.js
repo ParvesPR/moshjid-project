@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 import AllNotice from './AllNotice';
 
 const Notice = () => {
-    const { data: allNotice, isLoading,refetch } = useQuery('notice', () =>
+    const { data: allNotice, isLoading, refetch } = useQuery('notice', () =>
         fetch('http://localhost:5000/notice', {
             method: 'GET',
             headers: {

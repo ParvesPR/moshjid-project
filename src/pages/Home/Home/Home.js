@@ -10,12 +10,12 @@ import PrayerTime from '../PrayerTime/PrayerTime';
 const Home = () => {
     return (
         <div>
-           <Banner></Banner>
-           <IslamiPillar></IslamiPillar>
-           <PrayerTime></PrayerTime>
-           <Committee></Committee> 
-           <Blogs></Blogs>
-           <Footer></Footer>
+            <Banner></Banner>
+            <IslamiPillar></IslamiPillar>
+            <PrayerTime></PrayerTime>
+            <Committee></Committee>
+            <Blogs></Blogs>
+            <Footer></Footer>
         </div>
     );
 };
