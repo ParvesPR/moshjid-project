@@ -25,7 +25,7 @@ const Blogs = () => {
             </div>
             <h2 className='text-5xl font-semibold font-bensen flex justify-center items-center text-center py-7'>
                 মোট ব্লগঃ <span className='text-red-500 ml-2'>{allBlogs.length.toLocaleString('bn-BD')} টি</span> </h2>
-            <div className='px-12'>
+            <div className='px-12 grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     allBlogs.map(blogs => <Blog
                         key={blogs._id}

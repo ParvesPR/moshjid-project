@@ -9,9 +9,9 @@ const HomeBlog = () => {
             .then(data => setBlogs(data))
     }, [])
     return (
-        <div className='flex sm:flex-col lg:flex-row p-12'>
+        <div className='blog p-12'>
             {
-                blogs.map(blog => <Blog
+                blogs.slice(-3).map(blog => <Blog
                     key={blog._id}
                     blog={blog}
                 ></Blog>)
