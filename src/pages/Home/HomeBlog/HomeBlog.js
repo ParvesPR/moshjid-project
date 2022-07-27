@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Blog from './Blog';
+import './HomeBlog.css';
 
 const HomeBlog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -9,14 +10,14 @@ const HomeBlog = () => {
             .then(data => setBlogs(data))
     }, [])
     return (
-        <div className='blog p-12'>
+        <section className='p-12 blog-section'>
             {
                 blogs.slice(-3).map(blog => <Blog
                     key={blog._id}
                     blog={blog}
                 ></Blog>)
             }
-        </div>
+        </section>
     );
 };
 
