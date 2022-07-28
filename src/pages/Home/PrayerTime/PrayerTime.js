@@ -2,15 +2,11 @@ import React from 'react';
 import './PrayerTime.css';
 import about from '../../../assests/images/about.jpg';
 import aboutBorder from '../../../assests/images/about-border.png';
-import moment from 'moment';
-import { useState } from 'react';
-
 
 const PrayerTime = () => {
-    const [date, setDate] = useState('')
     return (
         <section className="prayer-section pt-12 pb-7 px-12 border-b-4 border-t-4 border-[#c4c4c4] flex flex-col lg:flex-row justify-center gap-20">
-            <div className="cardBg card w-96 bg-[#e9e9e9] shadow-lg mb-3">
+            <div className="cardBg card lg:max-w-lg bg-[#e9e9e9] shadow-lg mb-3">
                 <div className="card-body text-3xl font-bold">
                     <div className='grid lg:grid-cols-3 border-b-2 border-[#c4c4c4] justify-items-center pb-2'>
                         <p>ফজর </p>
