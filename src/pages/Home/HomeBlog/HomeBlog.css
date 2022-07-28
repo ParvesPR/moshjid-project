@@ -1,9 +1,7 @@
 .blog-section {
     display: grid;
     gap: 10px;
-    grid-template-columns: 20% 25% 25%;
-    grid-row-start: 1;
-    grid-row-end: 4;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .blog-section .blog-child:nth-child(1) {
@@ -23,4 +21,29 @@
     background-color: rgb(0, 121, 73);
     grid-row: 1 / span 1;
     grid-column: span 2;
+}
+
+@media only screen and (max-width: 640px) {
+    .blog-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(600px,2fr));
+      
+
+    }
+
+    .blog-section .blog-child:nth-child(1) {
+        background: rgb(255, 234, 234);
+      
+    }
+
+    .blog-section .blog-child:nth-child(2) {
+        background-color: rgb(125, 0, 0);
+       
+
+    }
+
+    .blog-section .blog-child:nth-child(3) {
+        background-color: rgb(0, 255, 153);
+       
+    }
 }
