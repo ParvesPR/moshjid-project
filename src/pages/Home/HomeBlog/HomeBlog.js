@@ -21,7 +21,7 @@ const HomeBlog = () => {
                 }
             </div>
             <div className='flex justify-center py-5'>
-                <button className='btn-sm rounded-md btn-warning font-normal text-lg text-white font-bensen'><Link to='/blogs'>আরও দেখুন</Link></button>
+                <button className='btn-sm text-center rounded-md btn bg-[#FFA90F] border-none font-normal text-2xl text-white font-bensen'><Link to='/blogs'>আরো দেখুন</Link></button>
             </div> 
 
         </section>
