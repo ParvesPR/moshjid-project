@@ -14,6 +14,7 @@ import Users from './pages/Users/Users';
 import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './pages/Home/Login/RequireAdmin';
 import AddBlog from './pages/Dashboard/AddBlog/AddBlog';
+import AddCommittee from './pages/Dashboard/AddCommittee/AddCommittee';
 
 
 
@@ -37,6 +38,11 @@ function App() {
           <Route path='addBlog' element={
             <RequireAdmin>
               <AddBlog></AddBlog>
+            </RequireAdmin>
+          }></Route>
+          <Route path='addCommittee' element={
+            <RequireAdmin>
+              <AddCommittee></AddCommittee>
             </RequireAdmin>
           }></Route>
 
