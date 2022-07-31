@@ -16,7 +16,7 @@ const Committee = () => {
                 <div class="content">
                     <a href="https://unsplash.com/photos/HkTMcmlMOUQ" alt="" />
                     <div class="content-overlay"></div>
-                    <img class="content-image sm:w-96 w-[280px] mb-2 rounded-full border-[#FFA90F] border-8" src={image1} />
+                    <img class="content-image w-[280px] mb-2 rounded-full border-[#FFA90F] border-8" src={image1} />
                     <div class="content-details fadeIn-bottom">
                         <h3 class="content-title">This is a title</h3>
                         <p class="content-text">This is a short description</p>
