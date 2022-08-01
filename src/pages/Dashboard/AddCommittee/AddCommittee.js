@@ -3,29 +3,53 @@ import Swal from 'sweetalert2';
 
 const AddCommittee = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
-    const handleOnSubmit = (data) => {
-        const url = 'http://localhost:5000/committee';
+    const imgStoreKey = '3528b3ade157fe6b5d8fedbb6b473c09';
+    const handleOnSubmit = async data => {
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imgStoreKey}`;
         fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            },
-            body: JSON.stringify(data)
+            method: 'POST',
+            body: formData,
         })
             .then(res => res.json())
             .then(result => {
-                if (result.insertedId) {
-                    Swal.fire(
-                        'Good job!',
-                        'কমিটি সফলভাবে যোগ করা হয়েছে !',
-                        'success'
-                    )
-                    reset();
+                console.log('imgbb', result);
+                if (result.success) {
+                    const img = result.data.url;
+                    const committee = {
+                        name: data.name,
+                        committeeType: data.committeeType,
+                        phone: data.phone,
+                        image: img,
+                        email: data.email
+                    };
+
+                    // SEND TO DATABASE
+                    const url = 'http://localhost:5000/committee';
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(committee)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            if (result.insertedId) {
+                                Swal.fire(
+                                    'Good job!',
+                                    'কমিটি সফলভাবে যোগ করা হয়েছে !',
+                                    'success'
+                                )
+                                reset();
+                            }
+                        })
                 }
             })
-    }
+    };
     return (
         <section>
 
@@ -81,8 +105,15 @@ const AddCommittee = () => {
                                 <label className="text-sm text-cyan-500">Profile Picture</label>
                                 <input type="file"
                                     className="input input-bordered w-full max-w-lg text-md"
-                                    {...register("image")}
-                                />
+                                    {...register("image", {
+                                        required: {
+                                            value: true,
+                                            message: "প্রোফাইল পিকচার দিতে হবে"
+                                        }
+                                    })} />
+                                <label className="label">
+                                    {errors.image?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.image.message}</span>}
+                                </label>
                             </div>
 
                             <div className="form-control w-full">
