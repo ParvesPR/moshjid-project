@@ -1,8 +1,31 @@
-import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 const AddCommittee = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm()
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+
+    const handleOnSubmit = (data) => {
+        const url = 'http://localhost:5000/committee';
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    Swal.fire(
+                        'Good job!',
+                        'কমিটি সফলভাবে যোগ করা হয়েছে !',
+                        'success'
+                    )
+                    reset();
+                }
+            })
+    }
     return (
         <section>
 
@@ -11,7 +34,7 @@ const AddCommittee = () => {
                 <div className="card w-full mx-2 lg:w-3/6 lg:mx-0 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className='text-center text-3xl font-bold'>নতুন কমিটি যোগ করুন</h2>
-                        <form onSubmit={handleSubmit()}>
+                        <form onSubmit={handleSubmit(handleOnSubmit)}>
                             <div className="form-control w-full max-w-lg">
                                 <input type="text" placeholder="কমিটির নাম" className="input input-bordered w-full max-w-lg text-lg"
                                     {...register("name", {
@@ -26,15 +49,18 @@ const AddCommittee = () => {
                             </div>
 
                             <div className="form-control w-full">
-                                <input type="text" placeholder="কমিটির ধরন/সভাপতি/অন্যান্য" className="input input-bordered w-full max-w-lg text-lg"
-                                    {...register("type", {
-                                        required: {
-                                            value: true,
-                                            message: "কমিটির ধরন দিতেই হবে"
-                                        }
-                                    })} />
+                                <select type="text" className="input input-bordered w-full max-w-lg text-lg" {...register("committeeType", {
+                                    required: {
+                                        value: true,
+                                        message: "কমিটির ধরন দিতেই হবে"
+                                    }
+                                })}>
+                                    <option value="empty">কমিটির ধরন সিলেক্ট করুন</option>
+                                    <option value="sovapoti">সভাপতি</option>
+                                    <option value="committee">কমিটি</option>
+                                </select>
                                 <label className="label">
-                                    {errors.subject?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.subject.message}</span>}
+                                    {errors.committeeType?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.committeeType.message}</span>}
                                 </label>
                             </div>
 
@@ -47,8 +73,16 @@ const AddCommittee = () => {
                                         }
                                     })} />
                                 <label className="label">
-                                    {errors.subject?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.subject.message}</span>}
+                                    {errors.phone?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.phone.message}</span>}
                                 </label>
+                            </div>
+
+                            <div className="form-control w-full mb-3 max-w-lg">
+                                <label className="text-sm text-cyan-500">Profile Picture</label>
+                                <input type="file"
+                                    className="input input-bordered w-full max-w-lg text-md"
+                                    {...register("image")}
+                                />
                             </div>
 
                             <div className="form-control w-full">

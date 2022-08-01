@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 
 const AddNotice = () => {
+    
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const handleAddItem = data => {
