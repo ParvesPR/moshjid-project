@@ -8,6 +8,9 @@ const Committee = () => {
     const { data: allCommittee, isLoading } = useQuery('committee', () =>
         fetch('http://localhost:5000/committee', {
             method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
         })
             .then(res => res.json())
     );
