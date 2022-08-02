@@ -6,12 +6,7 @@ import Loading from '../../Shared/Loading';
 
 const Committee = () => {
     const { data: allCommittee, isLoading } = useQuery('committee', () =>
-        fetch('http://localhost:5000/committee', {
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            },
-        })
+        fetch('http://localhost:5000/committee')
             .then(res => res.json())
     );
     if (isLoading) {

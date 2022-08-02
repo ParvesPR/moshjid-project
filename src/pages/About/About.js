@@ -5,7 +5,7 @@ import NavBar from '../Shared/NavBar/NavBar';
 import AboutDetails from './AboutDetails';
 
 const About = () => {
-    const { data: about, isLoading } = useQuery('aboutUs', () =>
+    const { data: about, isLoading, refetch } = useQuery('aboutUs', () =>
         fetch('http://localhost:5000/committee', {
             method: 'GET',
             headers: {
@@ -28,6 +28,7 @@ const About = () => {
                     about.map(result => <AboutDetails
                         key={result._id}
                         result={result}
+                        refetch={refetch}
                     ></AboutDetails>)
                 }
             </div>
