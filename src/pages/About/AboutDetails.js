@@ -41,19 +41,19 @@ const AboutDetails = ({ result, refetch }) => {
         })
     }
     return (
-        <div>
+        <div className='font-bensen'>
             <div className="content">
                 <div className="content-overlay"></div>
                 <img className="content-image w-[280px] mb-2 rounded-full border-[#FFA90F] border-8" src={image} alt="committee profile pic" />
                 <div className="content-details fadeIn-bottom">
                     <h3 className="content-title">{name}</h3>
-                    <h4 className="title">{committeeType}</h4>
+                    <h4 className="text-xl">{committeeType}</h4>
                     <p className="content-text">{phone}</p>
                 </div>
             </div>
             {admin &&
                 <div className='flex justify-center'>
-                    <button onClick={() => deleteConfirm(_id)} className='btn btn-sm btn-warning btn-outline rounded-full'><RiDeleteBin6Line /></button>
+                    <button title='Delete' onClick={() => deleteConfirm(_id)} className='btn btn-sm btn-warning btn-outline rounded-full'><RiDeleteBin6Line /></button>
                 </div>
             }
         </div>

@@ -80,8 +80,8 @@ const AddCommittee = () => {
                                     }
                                 })}>
                                     <option value="empty">কমিটির ধরন সিলেক্ট করুন</option>
-                                    <option value="sovapoti">সভাপতি</option>
-                                    <option value="committee">কমিটি</option>
+                                    <option value="সভাপতি">সভাপতি</option>
+                                    <option value="কমিটি">কমিটি</option>
                                 </select>
                                 <label className="label">
                                     {errors.committeeType?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.committeeType.message}</span>}
