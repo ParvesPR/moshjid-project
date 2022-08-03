@@ -5,8 +5,12 @@ import aboutBorder from '../../../assests/images/about-border.png';
 
 const PrayerTime = () => {
     return (
-        <section className="prayer-section pt-12 pb-7 px-12 border-b-4 border-t-4 border-[#c4c4c4] flex flex-col lg:flex-row justify-center gap-20">
-            <div className="cardBg card lg:max-w-lg bg-[#e9e9e9] shadow-lg mb-3">
+        <section className="relative prayer-section pt-12 pb-7 px-12 border-b-4 border-t-4 border-[#c4c4c4] flex flex-col lg:flex-row justify-center gap-20">
+              <div className='flex absolute -top-10'>
+                    <span className='bg-[#FFA90F] p-3 mx-3'>আযান</span>
+                    <span className='bg-[#FFA90F] p-3 ml-6'>ইকামত</span>
+                </div>
+            <div className="cardBg card lg:w-96 bg-[#e9e9e9] shadow-lg mb-3">
                 <div className="card-body text-3xl font-bold">
                     <div className='grid lg:grid-cols-3 border-b-2 border-[#c4c4c4] justify-items-center pb-2'>
                         <p>ফজর </p>
@@ -59,7 +63,7 @@ const PrayerTime = () => {
             <article>
                 <div className='grid grid-cols-2 gap-2 justify-center items-center'>
                     <div className='relative'>
-                        <img src={about} className='relative rounded-lg w-80 lg:h-[304px] z-[11]' alt="" />
+                        <img src={about} className='relative rounded-lg w-72 lg:h-[290px] z-[11]' alt="" />
                         <img src={aboutBorder} className='absolute -bottom-7 -left-7 z-[1] hidden lg:block' alt="" />
                     </div>
                     <div>
