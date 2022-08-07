@@ -31,7 +31,7 @@ const Dashboard = () => {
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addNotice">নতুন নোটিশ যোগ করুন</NavLink>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addBlog">নতুন ব্লগ যোগ করুন</NavLink>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addCommittee">নতুন কমিটি যোগ করুন</NavLink>
-                            <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">নামাজের সময়সূচী পরিবর্তন করুন</NavLink> </>
+                            <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/changeTime">নামাজের সময়সূচী পরিবর্তন করুন</NavLink> </>
                         }
 
                     </ul>
