@@ -45,9 +45,9 @@ const Blog = ({ blogs, refetch }) => {
         })
     }
     return (
-        <div className="card bg-base-100 shadow-xl col-start-3 col-span-4 lg:w-3/4 mx-auto">
+        <div className="card bg-base-100 shadow-xl col-start-3 col-span-4 w-full lg:w-3/4 mx-auto">
             <figure>
-                <img className='w-2/4 mx-auto' src={image} alt="card-img" />
+                <img className='w-3/4 lg:w-2/4 mx-auto' src={image} alt="card-img" />
             </figure>
             <div className="card-body">
                 <h2 className="font-bold text-2xl">{title}</h2>

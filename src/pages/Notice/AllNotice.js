@@ -48,7 +48,7 @@ const AllNotice = ({ notice, refetch }) => {
     }
 
     return (
-        <div className='px-12'>
+        <div className='px-8 lg:px-12'>
             <div className="card bg-base-100 shadow-xl mb-3 content h-min">
                 <div className="card-body">
                     <div className='flex items-center gap-5 justify-between'>
