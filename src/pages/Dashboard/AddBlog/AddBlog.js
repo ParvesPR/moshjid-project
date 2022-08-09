@@ -29,7 +29,7 @@ const AddBlog = () => {
                     };
 
                     // SEND TO DATABASE
-                    fetch('http://localhost:5000/blogs', {
+                    fetch(' http://localhost:5000/blogs', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

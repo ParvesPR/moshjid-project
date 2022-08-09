@@ -6,7 +6,7 @@ import User from '../AllUsers/User/User.js';
 const AllUsers = () => {
 
     const { data: users, isLoading, refetch } = useQuery('user', () =>
-        fetch('http://localhost:5000/user', {
+        fetch(' http://localhost:5000/user', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

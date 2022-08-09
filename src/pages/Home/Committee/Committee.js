@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading';
 
 const Committee = () => {
     const { data: allCommittee, isLoading } = useQuery('committee', () =>
-        fetch('http://localhost:5000/committee')
+        fetch(' http://localhost:5000/committee')
             .then(res => res.json())
     );
     if (isLoading) {
@@ -18,7 +18,7 @@ const Committee = () => {
             <div className='text-center block w-2/4 mx-auto mb-9'>
                 <img src={underline} className='sm:max-w-sm lg:w-1/2 mx-auto' alt="" />
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-center gap-y-2 lg:gap-0'>
                 {
                     allCommittee.map(committee =>
                         <div key={committee._id}>
@@ -26,7 +26,8 @@ const Committee = () => {
                                 <div className="content-overlay"></div>
                                 <img className="content-image w-[280px] mb-2 rounded-full border-[#FFA90F] border-8" src={committee.image} alt="committee profile pic" />
                                 <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">{committee.name}</h3>
+                                    <h3 className="font-bensen content-title">{committee.name}</h3>
+                                    <h4 className="font-bensen content-title">{committee.committeeType}</h4>
                                     <p className="content-text">{committee.phone}</p>
                                 </div>
                             </div>

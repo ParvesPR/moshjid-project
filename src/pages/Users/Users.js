@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import NavBar from '../Shared/NavBar/NavBar';
 
 const Users = () => {
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading } = useQuery('users', () => fetch(' http://localhost:5000/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

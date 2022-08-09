@@ -21,7 +21,7 @@ const Blog = ({ blogs, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.value) {
-                const url = `http://localhost:5000/blogs/${id}`;
+                const url = ` http://localhost:5000/blogs/${id}`;
                 console.log(url);
                 fetch(url, {
                     method: 'DELETE',

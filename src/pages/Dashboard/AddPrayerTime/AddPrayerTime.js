@@ -5,8 +5,8 @@ const AddPrayerTime = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     return (
         <section>
-            <div className='flex  justify-center items-center font-bensen'>
-                <div className="card w-3/6 bg-base-100 shadow-xl">
+            <div className='flex justify-center items-center font-bensen'>
+                <div className="card w-5/6 lg:w-3/6 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className='text-center text-3xl font-bold'>নামাজের সময়সূচী পরিবর্তন করুন</h2>
                         <form>

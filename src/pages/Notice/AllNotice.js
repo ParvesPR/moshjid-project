@@ -23,7 +23,7 @@ const AllNotice = ({ notice, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.value) {
-                const url = `http://localhost:5000/notice/${id}`;
+                const url = ` http://localhost:5000/notice/${id}`;
                 console.log(url);
                 fetch(url, {
                     method: 'DELETE',

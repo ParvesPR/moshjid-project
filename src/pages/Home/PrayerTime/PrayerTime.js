@@ -12,7 +12,7 @@ import moment from 'moment';
 const PrayerTime = () => {
     const dateClock = moment().format('LLLL');
     const { data: prayerTime, isLoading, refetch } = useQuery('prayer', () =>
-        fetch('http://localhost:5000/prayerTime', {
+        fetch(' http://localhost:5000/prayerTime', {
             method: 'GET'
         })
             .then(res => res.json())
@@ -43,7 +43,7 @@ const PrayerTime = () => {
                     <div className="hero-content lg:gap-3 flex-row lg:flex-row mr-5">
                         <img src={about} className="max-w-sm w-7/12 lg:w-8/12 xl:w-full" alt='about' />
                         <div>
-                            <img className='w-11/12 md:w-3/4 lg:w-10/12 2xl:w-full mx-auto' src={aboutTitle} alt="" />
+                            <img className='sm:max-w-sm md:w-3/4 lg:w-10/12 2xl:w-full mx-auto' src={aboutTitle} alt="" />
                             <img src={underline} className='w-3/4 lg:w-11/12 mx-auto' alt="" />
                         </div>
                     </div>

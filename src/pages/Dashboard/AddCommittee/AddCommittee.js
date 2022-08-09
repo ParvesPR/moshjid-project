@@ -27,7 +27,7 @@ const AddCommittee = () => {
                     };
 
                     // SEND TO DATABASE
-                    const url = 'http://localhost:5000/committee';
+                    const url = ' http://localhost:5000/committee';
                     fetch(url, {
                         method: 'POST',
                         headers: {
@@ -55,7 +55,7 @@ const AddCommittee = () => {
 
             <div className='flex  justify-center items-center font-bensen'>
 
-                <div className="card w-full mx-2 lg:w-3/6 lg:mx-0 bg-base-100 shadow-xl">
+                <div className="card w-5/6 mx-2 lg:w-3/6 lg:mx-0 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className='text-center text-3xl font-bold'>নতুন কমিটি যোগ করুন</h2>
                         <form onSubmit={handleSubmit(handleOnSubmit)}>

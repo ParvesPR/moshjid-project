@@ -8,7 +8,7 @@ import './Blogs.css';
 
 const Blogs = () => {
     const { data: allBlogs, isLoading, refetch } = useQuery('blog', () =>
-        fetch('http://localhost:5000/blogs', {
+        fetch(' http://localhost:5000/blogs', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

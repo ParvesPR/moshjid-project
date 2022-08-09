@@ -3,11 +3,11 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 
 const AddNotice = () => {
-    
+
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const handleAddItem = data => {
-        fetch('http://localhost:5000/addNotice', {
+        fetch(' http://localhost:5000/addNotice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -35,7 +35,7 @@ const AddNotice = () => {
 
             <div className='flex  justify-center items-center font-bensen'>
 
-                <div className="card w-3/6 bg-base-100 shadow-xl">
+                <div className="card w-5/6 lg:w-3/6 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className='text-center text-3xl font-bold'>নতুন নোটিশ যোগ করুন</h2>
                         <form onSubmit={handleSubmit(handleAddItem)}>
