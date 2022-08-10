@@ -26,9 +26,6 @@ const AddNotice = () => {
                     reset();
                 }
             })
-
-
-
     }
     return (
         <section>
