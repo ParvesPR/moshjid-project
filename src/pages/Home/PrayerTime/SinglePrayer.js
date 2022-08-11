@@ -30,7 +30,9 @@ const SinglePrayer = ({ result, refetch }) => {
                 <p>{name}</p>
                 <p className='font-normal'>{azanTime}</p>
                 <p className='font-normal'>{ekamotTime} </p>
-                {admin && <AiFillEdit className='text-sm' />}
+                {admin &&
+                    <label htmlFor="prayerModal" class="btn btn-xs modal-button">edit</label>
+                }
 
             </div>
 

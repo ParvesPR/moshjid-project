@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PrayerTime.css';
 import SinglePrayer from '../PrayerTime/SinglePrayer';
 import about from '../../../assests/images/about.png';
@@ -8,9 +8,11 @@ import underline from '../../../assests/images/underline.png';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 import moment from 'moment';
+import PrayerModal from './PrayerModal';
 
 const PrayerTime = () => {
     const dateClock = moment().format('LLLL');
+    const [manageTime, setManageTime] = useState(null)
     const { data: prayerTime, isLoading, refetch } = useQuery('prayer', () =>
         fetch(' http://localhost:5000/prayerTime', {
             method: 'GET'
@@ -35,8 +37,15 @@ const PrayerTime = () => {
                         key={result._id}
                         refetch={refetch}
                         result={result}
+                        setManageTime={setManageTime}
                     ></SinglePrayer>)
                 }
+                {manageTime && <PrayerModal
+                    manageTime={manageTime}
+                    setManageTime={setManageTime}
+                    refetch={refetch}
+                ></PrayerModal>}
+
             </div>
             <article className='order-first lg:order-last'>
                 <div className="hero items-start justify-center">
