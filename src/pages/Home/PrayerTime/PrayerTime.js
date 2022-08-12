@@ -40,12 +40,6 @@ const PrayerTime = () => {
                         setManageTime={setManageTime}
                     ></SinglePrayer>)
                 }
-                {manageTime && <PrayerModal
-                    manageTime={manageTime}
-                    setManageTime={setManageTime}
-                    refetch={refetch}
-                ></PrayerModal>}
-
             </div>
             <article className='order-first lg:order-last'>
                 <div className="hero items-start justify-center">
@@ -61,6 +55,11 @@ const PrayerTime = () => {
                     মসজিদের উৎকর্ষের ক্ষেত্রে,সেই সপ্তম শতাব্দীর সাদাসিধে খোলা প্রাঙ্গণবিশিষ্ট মসজিদে কাবা বা মসজিদে নববী থেকে বর্তমানে এর প্রভূত উন্নয়ন ঘটেছে। এখন অনেক মসজিদেরই সুবিশাল গম্বুজ,উচু মিনার এবং বৃহদাকার প্রাঙ্গণ দেখা যায়। মসজিদের উৎপত্তি আরব উপদ্বীপে হলেও বর্তমানে তা পৃথিবীর সব দেশেই ছড়িয়ে পড়েছে।
                 </p>
             </article>
+            {manageTime && <PrayerModal
+                manageTime={manageTime}
+                setManageTime={setManageTime}
+                refetch={refetch}
+            ></PrayerModal>}
         </section>
     );
 };

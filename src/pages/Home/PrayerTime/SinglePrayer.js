@@ -1,10 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { AiFillEdit } from "react-icons/ai";
 import auth from '../../../firebase.init';
 import useAdmin from '../../../hooks/useAdmin';
 
-const SinglePrayer = ({ result, refetch }) => {
+const SinglePrayer = ({ result, setManageTime, refetch }) => {
     const { name, azan, ekamot } = result;
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
@@ -31,9 +30,9 @@ const SinglePrayer = ({ result, refetch }) => {
                 <p className='font-normal'>{azanTime}</p>
                 <p className='font-normal'>{ekamotTime} </p>
                 {admin &&
-                    <label htmlFor="prayerModal" class="btn btn-xs modal-button">edit</label>
-                }
+                    <label onClick={() => setManageTime(result)} htmlFor="prayerModal" className="cursor-pointer bg-[#FFA90F] py-[1px] text-center text-xs rounded-lg text-white">Edit</label>
 
+                }
             </div>
 
         </div>
