@@ -22,6 +22,7 @@ const SinglePrayer = ({ result, setManageTime, refetch }) => {
     else {
         ekamotTime = '-----'
     }
+    refetch();
 
     return (
         <div className="lg:w-96 sm:max-w-sm mx-auto bg-[#e9e9e9] rounded-lg shadow-lg px-5">
