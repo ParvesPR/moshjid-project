@@ -6,7 +6,7 @@ import AboutDetails from './AboutDetails';
 
 const About = () => {
     const { data: about, isLoading, refetch } = useQuery('aboutUs', () =>
-        fetch(' http://localhost:5000/committee', {
+        fetch(' https://obscure-sierra-27359.herokuapp.com/committee', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

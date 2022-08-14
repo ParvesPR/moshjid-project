@@ -9,7 +9,7 @@ const User = ({ index, user, refetch }) => {
     const [users] = useAuthState(auth);
 
     const handleMakeAdmin = () => {
-        fetch(` http://localhost:5000/user/admin/${email}`, {
+        fetch(` https://obscure-sierra-27359.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

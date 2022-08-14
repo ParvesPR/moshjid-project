@@ -6,7 +6,7 @@ const AddPrayerTime = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const handleAddTime = data => {
-        fetch(' http://localhost:5000/time', {
+        fetch(' https://obscure-sierra-27359.herokuapp.com/time', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

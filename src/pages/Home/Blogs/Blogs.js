@@ -8,7 +8,7 @@ import './Blogs.css';
 
 const Blogs = () => {
     const { data: allBlogs, isLoading, refetch } = useQuery('blog', () =>
-        fetch(' http://localhost:5000/blogs', {
+        fetch(' https://obscure-sierra-27359.herokuapp.com/blogs', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

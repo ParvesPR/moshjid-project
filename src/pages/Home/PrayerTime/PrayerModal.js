@@ -15,7 +15,7 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
             ekamot: data.ekamot,
             
         };
-        fetch(`http://localhost:5000/prayerTime/${_id}`, {
+        fetch(`https://obscure-sierra-27359.herokuapp.com/prayerTime/${_id}`, {
             method: 'PUT',
 
             body: JSON.stringify(data)

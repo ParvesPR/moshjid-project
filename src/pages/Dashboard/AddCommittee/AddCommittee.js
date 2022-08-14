@@ -27,7 +27,7 @@ const AddCommittee = () => {
                     };
 
                     // SEND TO DATABASE
-                    const url = ' http://localhost:5000/committee';
+                    const url = ' https://obscure-sierra-27359.herokuapp.com/committee';
                     fetch(url, {
                         method: 'POST',
                         headers: {

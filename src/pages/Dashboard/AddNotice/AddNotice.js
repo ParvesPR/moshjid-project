@@ -7,7 +7,7 @@ const AddNotice = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const handleAddItem = data => {
-        fetch(' http://localhost:5000/addNotice', {
+        fetch(' https://obscure-sierra-27359.herokuapp.com/addNotice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

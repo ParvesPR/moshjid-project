@@ -7,7 +7,7 @@ import AllNotice from './AllNotice';
 
 const Notice = () => {
     const { data: allNotice, isLoading, refetch } = useQuery('notice', () =>
-        fetch(' http://localhost:5000/notice', {
+        fetch(' https://obscure-sierra-27359.herokuapp.com/notice', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
