@@ -6,18 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  // apiKey: process.env.REACT_APP_apiKey,
-  // authDomain: process.env.REACT_APP_authDomain,
-  // projectId: process.env.REACT_APP_projectId,
-  // storageBucket: process.env.REACT_APP_storageBucket,
-  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  // appId: process.env.REACT_APP_appId
-  apiKey: "AIzaSyAVAQX0JnIFd49ywFh7N2c06LXX8RGm8zA",
-  authDomain: "bogura-central-mashjid.firebaseapp.com",
-  projectId: "bogura-central-mashjid",
-  storageBucket: "bogura-central-mashjid.appspot.com",
-  messagingSenderId: "864039804624",
-  appId: "1:864039804624:web:b24c2b3ee84ffa2b3348d5"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
