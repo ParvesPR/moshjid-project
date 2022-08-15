@@ -6,7 +6,7 @@ import './HomeBlog.css';
 const HomeBlog = () => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch(' https://obscure-sierra-27359.herokuapp.com/blogs')
+        fetch(' http://localhost:5000/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])

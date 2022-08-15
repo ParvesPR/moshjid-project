@@ -29,7 +29,7 @@ const AddBlog = () => {
                     };
 
                     // SEND TO DATABASE
-                    fetch(' https://obscure-sierra-27359.herokuapp.com/blogs', {
+                    fetch(' http://localhost:5000/blogs', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

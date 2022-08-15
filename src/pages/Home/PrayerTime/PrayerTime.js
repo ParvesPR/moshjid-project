@@ -14,7 +14,7 @@ const PrayerTime = () => {
     const dateClock = moment().format('LLLL');
     const [manageTime, setManageTime] = useState(null)
     const { data: prayerTime, isLoading, refetch } = useQuery('prayer', () =>
-        fetch(' https://obscure-sierra-27359.herokuapp.com/prayerTime', {
+        fetch(' http://localhost:5000/prayerTime', {
             method: 'GET'
         })
             .then(res => res.json())

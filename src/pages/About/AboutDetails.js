@@ -20,7 +20,7 @@ const AboutDetails = ({ result, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.value) {
-                const url = ` https://obscure-sierra-27359.herokuapp.com/committee/${id}`;
+                const url = ` http://localhost:5000/committee/${id}`;
                 console.log(url);
                 fetch(url, {
                     method: 'DELETE'

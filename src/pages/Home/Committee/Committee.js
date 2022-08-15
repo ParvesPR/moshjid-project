@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading';
 
 const Committee = () => {
     const { data: allCommittee, isLoading } = useQuery('committee', () =>
-        fetch(' https://obscure-sierra-27359.herokuapp.com/committee')
+        fetch(' http://localhost:5000/committee')
             .then(res => res.json())
     );
     if (isLoading) {
