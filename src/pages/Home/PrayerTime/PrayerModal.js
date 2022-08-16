@@ -9,21 +9,18 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const handleAddTime = (data) => {
-        const time = {
-            azan: data.name,
-            ekamot: data.ekamot,
-            
-        };
+    const onSubmit = (data) => {
         fetch(`http://localhost:5000/prayerTime/${_id}`, {
             method: 'PUT',
-
+            headers: {
+                'content-type': 'application/json',
+            },
             body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                if (result.insertedId) {
+                if (result.modifiedCount || result.matchedCount) {
                     Swal.fire(
                         'Good job!',
                         'সফলভাবে পরিবর্তন করা হয়েছে !',
@@ -33,6 +30,7 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
                     reset();
                 }
             })
+
     }
     return (
         <div>
@@ -44,10 +42,10 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
                     <p className="py-4 font-semibold text-lg text-center text-slate-700">আপনি <span className='text-red-600 text-xl font-bold'>{name}</span> সময় পরিবর্তনের জন্য নির্বাচন করেছেন</p>
 
                     {/* FORM */}
-                    <form onSubmit={handleSubmit(handleAddTime)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-lg">
                             <label className="text-lg text-black">{name}</label>
-                            <input type="text" placeholder='আযান' className="input input-bordered w-full max-w-lg text-lg"
+                            <input type="text" name='azan' placeholder='আযান' className="input input-bordered w-full max-w-lg text-lg"
                                 {...register("azan", {
                                     required: {
                                         value: true,
@@ -61,7 +59,7 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
 
                         <div className="form-control w-full max-w-lg">
                             <label className="text-lg text-black">{name}</label>
-                            <input type="text" placeholder='ইকামত' className="input input-bordered w-full max-w-lg text-lg"
+                            <input type="text" name='ekamot' placeholder='ইকামত' className="input input-bordered w-full max-w-lg text-lg"
                                 {...register("ekamot", {
                                     required: {
                                         value: true,
@@ -72,8 +70,8 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
                                 {errors.name?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.name.message}</span>}
                             </label>
                         </div>
+                        <input className='w-full btn btn-sm' type='submit' value='submit' />
                     </form>
-                    <button className='w-full btn btn-sm' onClick={() => handleAddTime(_id)}>Save Change</button>
                 </div>
             </div>
         </div>

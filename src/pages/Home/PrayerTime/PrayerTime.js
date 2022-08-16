@@ -14,7 +14,7 @@ const PrayerTime = () => {
     const dateClock = moment().format('LLLL');
     const [manageTime, setManageTime] = useState(null)
     const { data: prayerTime, isLoading, refetch } = useQuery('prayer', () =>
-        fetch(' http://localhost:5000/prayerTime', {
+        fetch('http://localhost:5000/prayerTime', {
             method: 'GET'
         })
             .then(res => res.json())
@@ -29,8 +29,8 @@ const PrayerTime = () => {
                 <p className='text-center pb-2'>{dateClock}</p>
                 <img src={underline} className='w-7/12 md:w-6/12 lg:w-11/12 mx-auto pb-3' alt="" />
                 <div className='ml-10 lg:ml-0 flex justify-center gap-2 lg:gap-4 text-white font-normal text-lg lg:text-xl text-center'>
-                    <span className='bg-[#FFA90F] py-1 px-3 rounded-t-md mr-4 lg:mx-9 lg:mr-6'>আযান</span>
-                    <span className='bg-[#FFA90F] py-1 px-3 rounded-t-md text-white mr-2 lg:mr-0 lg:mx-0'>ইকামত</span>
+                    <span className='bg-[#FFA90F] py-1 px-3 rounded-t-md mr-4 lg:mx-10 lg:mr-6'>আযান</span>
+                    <span className='bg-[#FFA90F] py-1 px-3 rounded-t-md text-white mr-2 lg:-mr-4 lg:mx-0'>ইকামত</span>
                 </div>
                 {
                     prayerTime.map(result => <SinglePrayer
