@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 // import "./styles.css";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Autoplay, Pagination } from "swiper";
 
 const Banner = () => {
   return (
@@ -21,10 +21,13 @@ const Banner = () => {
       <div className='w-full absolute z-10 mt-10 md:mt-14 lg:mt-24'>
         <NavBar></NavBar>
       </div>
-      {/* <div className="relative z-0 carousel w-full"></div > */}
 
       <Swiper
         effect={"coverflow"}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
@@ -36,7 +39,7 @@ const Banner = () => {
           slideShadows: true,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Autoplay, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>

@@ -5,7 +5,7 @@ const IslamiPillar = () => {
     return (
         <section>
             <div>
-                <img className='scale-125 lg:scale-[1]' src={islamPilar} alt="" />
+                <img src={islamPilar} alt="" />
             </div>
         </section>
     );
