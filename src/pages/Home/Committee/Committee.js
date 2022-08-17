@@ -31,7 +31,8 @@ const Committee = () => {
                                     <p className="content-text">{committee.phone}</p>
                                 </div>
                             </div>
-                        </div>)
+                        </div>
+                    )
                 }
             </div>
         </section>

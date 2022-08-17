@@ -25,13 +25,13 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="custom-font side-bg menu px-4 py-10 overflow-y-auto w-80 text-white">
-                        <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/users">আমার প্রোফাইল</NavLink>
+                        <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/myProfile">আমার প্রোফাইল</NavLink>
                         {admin && <>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/allUsers">সকল ইউজারস</NavLink>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addNotice">নতুন নোটিশ যোগ করুন</NavLink>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addBlog">নতুন ব্লগ যোগ করুন</NavLink>
                             <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/addCommittee">নতুন কমিটি যোগ করুন</NavLink>
-                            <NavLink className='mt-2 font-normal text-white btn btn-outline' to="/dashboard/changeTime">নামাজের সময়সূচী পরিবর্তন করুন</NavLink> </>
+                        </>
                         }
 
                     </ul>

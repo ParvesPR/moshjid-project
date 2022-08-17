@@ -20,7 +20,7 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                if (result.modifiedCount || result.matchedCount) {
+                if (result.modifiedCount) {
                     Swal.fire(
                         'Good job!',
                         'সফলভাবে পরিবর্তন করা হয়েছে !',
@@ -28,6 +28,13 @@ const PrayerModal = ({ manageTime, setManageTime, refetch }) => {
                     )
                     refetch();
                     reset();
+                }
+                else if (result.matchedCount) {
+                    Swal.fire(
+                        'Alert!!',
+                        'আপনি পূর্বের সময় নির্বাচন করেছেন! দয়া করে নতুন সময় দিন।',
+                        'error'
+                    )
                 }
             })
 

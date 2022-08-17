@@ -15,7 +15,7 @@ import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './pages/Home/Login/RequireAdmin';
 import AddBlog from './pages/Dashboard/AddBlog/AddBlog';
 import AddCommittee from './pages/Dashboard/AddCommittee/AddCommittee';
-import AddPrayerTime from './pages/Dashboard/AddPrayerTime/AddPrayerTime';
+import MyProfile from './pages/Dashboard/MyProfile/MyProfile';
 
 
 
@@ -36,6 +36,10 @@ function App() {
             <Dashboard />
           </RequireAuth>
         } >
+          <Route path='myProfile' element={
+            <MyProfile></MyProfile>
+          }></Route>
+
           <Route path='addBlog' element={
             <RequireAdmin>
               <AddBlog></AddBlog>
@@ -50,12 +54,6 @@ function App() {
           <Route path='addNotice' element={
             <RequireAdmin>
               <AddNotice></AddNotice>
-            </RequireAdmin>
-          }></Route>
-
-          <Route path='changeTime' element={
-            <RequireAdmin>
-              <AddPrayerTime></AddPrayerTime>
             </RequireAdmin>
           }></Route>
 
