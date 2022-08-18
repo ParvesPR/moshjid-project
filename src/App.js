@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import "animate.css/animate.min.css";
 import Home from '../src/pages/Home/Home/Home';
 import Login from './pages/Home/Login/Login';
 import SignUp from './pages/Home/Login/SignUp';
@@ -16,6 +17,7 @@ import RequireAdmin from './pages/Home/Login/RequireAdmin';
 import AddBlog from './pages/Dashboard/AddBlog/AddBlog';
 import AddCommittee from './pages/Dashboard/AddCommittee/AddCommittee';
 import MyProfile from './pages/Dashboard/MyProfile/MyProfile';
+import AddSlider from './pages/Dashboard/AddSlider/AddSlider';
 
 
 
@@ -60,6 +62,12 @@ function App() {
           <Route path='allUsers' element={
             <RequireAdmin>
               <AllUsers></AllUsers>
+            </RequireAdmin>
+          }></Route>
+
+          <Route path='addSlider' element={
+            <RequireAdmin>
+              <AddSlider></AddSlider>
             </RequireAdmin>
           }></Route>
 

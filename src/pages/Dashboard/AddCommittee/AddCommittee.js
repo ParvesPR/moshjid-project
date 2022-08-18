@@ -5,6 +5,7 @@ const AddCommittee = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const imgStoreKey = '3528b3ade157fe6b5d8fedbb6b473c09';
     const handleOnSubmit = async data => {
+        console.log(data)
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);

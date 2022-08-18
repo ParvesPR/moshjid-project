@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 // import "./styles.css";
 
@@ -17,60 +18,62 @@ import { EffectCoverflow, Autoplay, Pagination } from "swiper";
 
 const Banner = () => {
   return (
-    <section>
-      <div className='w-full absolute z-10 mt-10 md:mt-14 lg:mt-24'>
-        <NavBar></NavBar>
-      </div>
+    <AnimationOnScroll animateIn="animate__tada">
+      <section>
+        <div className='w-full absolute z-10 mt-10 md:mt-14 lg:mt-24'>
+          <NavBar></NavBar>
+        </div>
 
-      <Swiper
-        effect={"coverflow"}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-        }}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Autoplay, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner1} alt="carousel" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner2} alt="carousel" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner3} alt="carousel" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner4} alt='carousel' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner2} alt='carousel' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner3} alt='carousel' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
-        </SwiperSlide>
-      </Swiper>
-    </section >
+        <Swiper
+          effect={"coverflow"}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner1} alt="carousel" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner2} alt="carousel" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner3} alt="carousel" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner4} alt='carousel' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner2} alt='carousel' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner3} alt='carousel' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="max-h-screen w-full mx-auto" src={banner1} alt='carousel' />
+          </SwiperSlide>
+        </Swiper>
+      </section >
+    </AnimationOnScroll>
   );
 };
 
