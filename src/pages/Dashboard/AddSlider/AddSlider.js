@@ -21,33 +21,33 @@ const AddSlider = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const slider = {
-                        image1: img,
-                        image2: img,
+                        image: img,
+                        secondImg: data.secondImg,
                         title: data.title,
                         subTitle: data.subTitle,
                     };
 
-                    // // SEND TO DATABASE
-                    // const url = ' http://localhost:5000/committee';
-                    // fetch(url, {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'content-type': 'application/json',
-                    //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                    //     },
-                    //     body: JSON.stringify(committee)
-                    // })
-                    //     .then(res => res.json())
-                    //     .then(result => {
-                    //         if (result.insertedId) {
-                    //             Swal.fire(
-                    //                 'Good job!',
-                    //                 'Thank You',
-                    //                 'success'
-                    //             )
-                    //             reset();
-                    //         }
-                    //     })
+                    // SEND TO DATABASE
+                    const url = ' http://localhost:5000/slider';
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(slider)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            if (result.insertedId) {
+                                Swal.fire(
+                                    'Good job!',
+                                    'Thank You',
+                                    'success'
+                                )
+                                reset();
+                            }
+                        })
                 }
             })
     };
@@ -72,22 +72,22 @@ const AddSlider = () => {
                                         }
                                     })} />
                                 <label className="label">
-                                    {errors.image?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.image.message}</span>}
+                                    {errors.image?.type === 'required' && <span className="label-text-alt text-red-600 text-md">{errors.image.message}</span>}
                                 </label>
                             </div>
 
                             <div className="form-control w-full mb-3 max-w-lg">
                                 <label className="text-sm text-cyan-500">Second Image</label>
-                                <input type="file"
+                                <input type="text" placeholder='Please submit link'
                                     className="input input-bordered w-full max-w-lg text-md"
-                                    {...register("image2", {
+                                    {...register("secondImg", {
                                         required: {
                                             value: true,
-                                            message: "Please Select Image"
+                                            message: "Please Submit Image Link"
                                         }
                                     })} />
                                 <label className="label">
-                                    {errors.image2?.type === 'required' && <span className="label-text-alt text-red-600 text-lg">{errors.image2.message}</span>}
+                                    {errors.secondImg?.type === 'required' && <span className="label-text-alt text-red-600 text-md">{errors.secondImg.message}</span>}
                                 </label>
                             </div>
 
