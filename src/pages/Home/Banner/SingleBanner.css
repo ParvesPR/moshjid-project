@@ -1,0 +1,11 @@
+.slider-wrapper {
+    position: relative;
+}
+
+.secondImg {
+    width: 20%;
+    margin: 0px auto;
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+}
